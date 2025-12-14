@@ -1,0 +1,65 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.cards {
+   padding: 2rem 0 5rem;
+
+   &__container {
+      @include container;
+   }
+
+   &__grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      align-items: stretch;
+
+      @include tablet {
+         grid-template-columns: repeat(2, 1fr);
+         align-items: stretch;
+
+         & > .card:last-child {
+            grid-column: span 2;
+            justify-self: center;
+         }
+      }
+
+      @include desktop {
+         grid-template-columns: repeat(3, 1fr);
+         align-items: stretch;
+
+         & > .card:last-child {
+            grid-column: auto;
+            justify-self: auto;
+         }
+      }
+   }
+
+   &__card {
+      @include card-surface;
+      padding: 1.5rem;
+      width: 100%;
+      max-width: 300px;
+      min-height: 320px;
+      text-align: center;
+
+      border: 3px solid transparent;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-weight: 800;
+
+      &--active {
+         border-color: $color-primary;
+      }
+
+      @include desktop {
+         &:last-child {
+            grid-column: auto;
+         }
+      }
+   }
+}

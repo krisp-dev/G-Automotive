@@ -1,0 +1,66 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.card {
+   @include card-surface;
+   width: 100%;
+   max-width: 420px;
+   overflow: hidden;
+   transition: border 0.2s ease;
+
+   display: flex;
+   flex-direction: column;
+
+   &--active {
+      outline: 3px solid $color-primary;
+   }
+
+   &__image {
+      width: 100%;
+      height: 140px;
+      overflow: hidden;
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         display: block;
+      }
+   }
+
+   &__content {
+      padding: 1.5rem;
+
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+   }
+
+   &__title {
+      margin: 0 0 1rem;
+      font-size: 1.5rem;
+      font-weight: 800;
+   }
+
+   &__text {
+      margin: 0 0 1rem;
+      color: $color-muted;
+      font-size: 0.92rem;
+      line-height: 1.4;
+   }
+
+   &__actions {
+      margin-top: auto;
+      width: 100%;
+
+      .btn {
+         width: 100%;
+      }
+   }
+}
+
+@include tablet {
+   .card {
+      max-width: 360px;
+   }
+}

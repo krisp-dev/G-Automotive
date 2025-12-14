@@ -1,0 +1,42 @@
+@use "./variables" as *;
+
+// Breakpoints
+@mixin ultra-thin {
+   @media (min-width: $bp-ultra-thin) {
+      @content;
+   }
+}
+
+@mixin tablet {
+   @media (min-width: $bp-tablet) {
+      @content;
+   }
+}
+
+@mixin desktop {
+   @media (min-width: $bp-desktop) {
+      @content;
+   }
+}
+
+// Centered page container
+@mixin container {
+   width: min(70%, $container-max);
+   margin-inline: auto;
+}
+
+// Reusable “card surface”
+@mixin card-surface {
+   background: $color-white;
+   border-radius: $radius-card;
+   box-shadow: $shadow-card;
+}
+
+// Reusable button base
+@mixin button-base {
+   border: none;
+   border-radius: $radius-pill;
+   padding: 0.9rem 1.6rem;
+   font-weight: 700;
+   cursor: pointer;
+}

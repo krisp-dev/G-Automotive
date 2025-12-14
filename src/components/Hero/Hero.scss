@@ -1,0 +1,59 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.hero {
+   padding: 5rem 1rem;
+   position: relative;
+
+   background-size: cover;
+   background-position: center;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   text-align: center;
+   color: $color-white;
+
+   &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba($color: #000000, $alpha: 0.25);
+   }
+
+   & > * {
+      position: relative;
+      z-index: 1;
+   }
+
+   &__title,
+   &__text,
+   &__button {
+      max-width: 70%;
+
+      @include ultra-thin {
+         max-width: 50%;
+      }
+   }
+
+   &__title {
+      font-size: 2.2rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+
+      @include tablet {
+         font-size: 2.9rem;
+      }
+
+      @include desktop {
+         font-size: 3.2rem;
+      }
+   }
+
+   &__text {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+   }
+}
