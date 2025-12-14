@@ -2,7 +2,7 @@
 @use "../../styles/mixins" as *;
 
 .cards {
-   padding: 2rem 0 5rem;
+   padding: 2rem 0;
 
    &__container {
       @include container;
@@ -10,7 +10,7 @@
 
    &__grid {
       display: grid;
-      gap: 1.5rem;
+      gap: 3.5rem;
       grid-template-columns: 1fr;
       justify-items: center;
       align-items: stretch;

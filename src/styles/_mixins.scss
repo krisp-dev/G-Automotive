@@ -36,7 +36,16 @@
 @mixin button-base {
    border: none;
    border-radius: $radius-pill;
-   padding: 0.9rem 1.6rem;
    font-weight: 700;
    cursor: pointer;
+
+   &:hover {
+      filter: brightness(1.2);
+      transform: translateY(-0.25rem);
+      transition: all 0.2s ease-in-out;
+   }
+
+   &:focus {
+      outline: none;
+   }
 }

@@ -29,7 +29,7 @@
    }
 
    &__content {
-      padding: 1.5rem;
+      padding: 0.5rem 1.5rem;
 
       display: flex;
       flex-direction: column;
@@ -37,7 +37,7 @@
    }
 
    &__title {
-      margin: 0 0 1rem;
+      margin: 0 0 0.2rem;
       font-size: 1.5rem;
       font-weight: 800;
    }
@@ -45,12 +45,13 @@
    &__text {
       margin: 0 0 1rem;
       color: $color-muted;
-      font-size: 0.92rem;
+      font-size: 0.85rem;
       line-height: 1.4;
    }
 
    &__actions {
       margin-top: auto;
+      margin-bottom: 5px;
       width: 100%;
 
       .btn {
